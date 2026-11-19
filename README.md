@@ -17,7 +17,7 @@ Everything is plain Markdown. Edit it like documentation.
 
 ### Option A — Marketplace (recommended, gets updates)
 ```text
-/plugin marketplace add <git-url-or-owner/repo>
+/plugin marketplace add ramanskp/claude-skills
 /plugin install ui-ux@ui-ux-marketplace
 ```
 Restart Claude Code. Update later with `/plugin marketplace update ui-ux-marketplace`.
@@ -26,7 +26,7 @@ To roll it out to a whole project, commit this to the project's `.claude/setting
 ```json
 {
   "extraKnownMarketplaces": {
-    "ui-ux-marketplace": { "source": { "source": "git", "url": "<git-url>" } }
+    "ui-ux-marketplace": { "source": { "source": "git", "url": "https://github.com/ramanskp/claude-skills.git" } }
   },
   "enabledPlugins": { "ui-ux@ui-ux-marketplace": true }
 }
