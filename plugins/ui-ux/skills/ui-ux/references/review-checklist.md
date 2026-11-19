@@ -11,6 +11,7 @@ Work through the categories in order. Record each finding with a **location**, t
    - **Announcement:** is every new error or status either focused or placed in a live region? Changing `aria-describedby` or text on a focused element is **not** re-read. An identical repeated message must be cleared and set again to be re-announced.
    - **Order:** does the DOM and tab order match the visual order? Look for controls placed before the thing they act on (e.g. a "Show password" toggle before its input).
    - **Repeat and race:** a second submit, a second identical error, a slow response that arrives after a retry.
+   - **Blur vs. click:** when focus leaves a field toward a link or button next to it, does the blur handler change or remove that target before the click lands? Server-set errors in particular must survive blur.
 4. **Run the categories below.** For each pattern used, also check its *Required states* and *Anti-patterns*.
 5. **Score and report** using the rubric and template at the bottom.
 

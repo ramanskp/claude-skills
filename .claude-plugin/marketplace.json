@@ -3,14 +3,14 @@
   "owner": { "name": "Diligent Squad UI" },
   "metadata": {
     "description": "Team UI/UX standards for Claude Code",
-    "version": "0.2.1"
+    "version": "0.2.2"
   },
   "plugins": [
     {
       "name": "ui-ux",
       "source": "./plugins/ui-ux",
       "description": "Lean, stack-agnostic UI/UX team standard: principles, accessibility, a design-pattern library, and a /ux-review audit command.",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "category": "design",
       "keywords": ["ui", "ux", "accessibility", "design-patterns", "design-system", "review"]
     }

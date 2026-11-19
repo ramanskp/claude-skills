@@ -56,3 +56,4 @@ Use this list for every interactive element and every review. Each item names it
 2. Zoom to 200% and resize to 320px wide.
 3. Run an automated checker (axe, Lighthouse, or a platform equivalent). It catches about 30–40% of issues; the manual checks above cover the rest.
 4. Do a screen-reader smoke test of the primary flow (VoiceOver, NVDA, or TalkBack).
+5. **Automated browser tests: use real input.** Drive focus-sensitive UI with real pointer and keyboard events (e.g. Playwright `page.click()`, `page.keyboard.type()`, `press('Tab')`), never `element.click()`, `dispatchEvent` or setting `.value`. Synthetic events skip mousedown, focus and blur, so they hide bugs like an error (and its link) vanishing on blur before the click lands. Test both paths for every in-form link or button: mouse click, and Tab then Enter.

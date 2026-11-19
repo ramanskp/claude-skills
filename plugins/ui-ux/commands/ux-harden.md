@@ -14,4 +14,5 @@ Follow the `ui-ux` skill:
    - **Accessibility**: work through `accessibility.md`, covering labels, focus visibility and return, keyboard map, live announcements, contrast, target sizes, and reduced motion.
    - **Responsive**: check at 320px, 768px, 1280px and at 200% zoom, plus touch alternatives to hover (`layout-responsive.md`).
 4. Keep the visual design unchanged unless a fix requires it (for example, a contrast failure).
-5. Finish with a checklist of what you added per component (`file:line`), and anything you couldn't verify from code (e.g. screen-reader output).
+5. **If you can run a browser, verify with real input.** Use real clicks, typing and Tab presses (e.g. Playwright `page.click()` / `keyboard`), not `element.click()`, `dispatchEvent` or setting `.value`, which skip focus and blur. Cover each field's blur, each in-form link and button by mouse and by keyboard, and each error and success path (stub the network responses).
+6. Finish with a checklist of what you added per component (`file:line`), what you verified in a browser and how, and anything you couldn't verify (e.g. screen-reader output).
