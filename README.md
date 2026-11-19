@@ -13,6 +13,44 @@ A lean, stack-agnostic UI/UX standard packaged as a Claude Code plugin. It conta
 
 Everything is plain Markdown. Edit it like documentation.
 
+## For teammates
+
+### 1. Install (about 1 minute, once)
+In Claude Code:
+```text
+/plugin marketplace add ramanskp/claude-skills
+/plugin install ui-ux@ui-ux-marketplace
+```
+Restart Claude Code. Check that it's installed with `/plugin`: `ui-ux` should appear as enabled.
+
+### 2. Set up your project (once per repo)
+```text
+/ux-init
+```
+This writes a `DESIGN.md` at the project root with your stack, tokens and brand notes. Commit it so everyone on the project shares it.
+
+### 3. Day to day
+| You want to… | Do this |
+|--------------|---------|
+| Build or change UI | Just ask, e.g. *"Add a filterable orders table"*. The skill applies automatically |
+| Check UI before a PR | `/ux-review src/components/Checkout/` (or `/ux-review` with no target for the current diff) |
+| Make it look less generic | `/ux-polish <file>` |
+| Add missing states, edge cases and accessibility | `/ux-harden <file>` |
+
+`/ux-review` returns a score and a verdict. **Any Blocker means not shippable**, whatever the score.
+
+### 4. Stay up to date
+```text
+/plugin marketplace update ui-ux-marketplace
+```
+Then restart Claude Code. See [CHANGELOG.md](CHANGELOG.md) for what changed.
+
+### Troubleshooting
+- **The `/ux-*` commands don't show up:** restart Claude Code after installing or updating.
+- **The skill doesn't kick in:** mention the UI work explicitly (page, component, form, layout, accessibility). It deliberately stays out of backend-only tasks.
+- **It conflicts with your project's design system:** put the overrides in `DESIGN.md`. Project rules win over the team defaults.
+- **Found a gap or a wrong rule?** Open an issue or PR. See [Contributing a pattern](#contributing-a-pattern).
+
 ## Install
 
 ### Option A — Marketplace (recommended, gets updates)
