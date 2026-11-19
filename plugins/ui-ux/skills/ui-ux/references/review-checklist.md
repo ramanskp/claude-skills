@@ -6,8 +6,13 @@ Work through the categories in order. Record each finding with a **location**, t
 ## Process
 1. **Identify scope.** List the screens or components under review and the patterns they use (map each to `patterns/INDEX.md`).
 2. **Walk the primary task** as a user would. Note friction before reading any code.
-3. **Run the categories below.** For each pattern used, also check its *Required states* and *Anti-patterns*.
-4. **Score and report** using the rubric and template at the bottom.
+3. **Trace every interaction path in the code** (when scripts or handlers exist). Don't skim. For each user action (submit, Enter in a field, click, blur, toggle, retry, back/forward), follow the code to every outcome: success, each error branch, timeout, offline. For each outcome, check:
+   - **Focus:** where does it go? If the code calls `focus()` on an element that *already* has focus (for example, Enter pressed inside the invalid field), nothing is announced. A live-region message is needed (WCAG 4.1.3).
+   - **Announcement:** is every new error or status either focused or placed in a live region? Changing `aria-describedby` or text on a focused element is **not** re-read. An identical repeated message must be cleared and set again to be re-announced.
+   - **Order:** does the DOM and tab order match the visual order? Look for controls placed before the thing they act on (e.g. a "Show password" toggle before its input).
+   - **Repeat and race:** a second submit, a second identical error, a slow response that arrives after a retry.
+4. **Run the categories below.** For each pattern used, also check its *Required states* and *Anti-patterns*.
+5. **Score and report** using the rubric and template at the bottom.
 
 ## Categories
 ### 1. Accessibility (see `accessibility.md`)

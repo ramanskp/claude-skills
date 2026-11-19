@@ -1,6 +1,6 @@
 {
   "name": "ui-ux",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Lean, stack-agnostic UI/UX team standard: principles, accessibility, a design-pattern library, and a /ux-review audit command.",
   "author": { "name": "Diligent Squad UI" },
   "license": "MIT",

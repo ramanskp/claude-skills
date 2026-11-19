@@ -2,6 +2,11 @@
 
 All notable changes to this plugin. Format: [Keep a Changelog](https://keepachangelog.com), versioning: [SemVer](https://semver.org).
 
+## [0.2.1] — 2026-11-19
+### Changed
+- Review checklist: new step 3, "Trace every interaction path". Covers focus no-ops on already-focused fields, silent `aria-describedby` changes, re-announcing identical messages, DOM vs. visual order, and repeat/race conditions. Added after a review pass missed a silent-error bug that a browser test later confirmed.
+- Accessibility checklist: matching rules for announcing errors on focused elements and for DOM order matching visual order.
+
 ## [0.2.0] — 2026-11-17
 ### Added
 - `references/anti-patterns.md`: generic-AI visual anti-patterns and a pre-finish self-check.

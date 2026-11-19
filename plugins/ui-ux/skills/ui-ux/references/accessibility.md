@@ -33,6 +33,8 @@ Use this list for every interactive element and every review. Each item names it
 - [ ] Use native elements first (`button`, `a`, `input`, `select`, `dialog`). Add ARIA only when native semantics fall short.
 - [ ] Custom widgets follow the WAI-ARIA Authoring Practices for role, state and keyboard behavior (4.1.2).
 - [ ] Status messages are announced without moving focus (`role="status"` / `aria-live`) (4.1.3).
+- [ ] Errors raised on an element that **already has focus** (e.g. Enter pressed inside the invalid field) are announced via a live region. `focus()` on the focused element and `aria-describedby` changes are silent. To re-announce an identical message, clear the region first, then set it on the next frame (4.1.3).
+- [ ] DOM and tab order match the visual order. A control comes after the thing it acts on (1.3.2, 2.4.3).
 
 ## Quick rules for common widgets
 | Widget | Must have |
